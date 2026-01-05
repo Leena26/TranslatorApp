@@ -43,7 +43,7 @@ A web-based translation application built with **Flask** that translates text be
 
 Access the app at http://127.0.0.1:5000. 
 
-##📝 Usage
+## Usage📝 
  - Type the text you want to translate in the left box.
  - Select your Starting Language and Target Language.
  - Click Translate.
