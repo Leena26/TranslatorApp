@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form action="" method="POST">
+        <div class="box">
+            <textarea name="initial_text" rows="4" cols="50" placeholder="Enter text"></textarea>
+            <select name="source_lang">
+                {% for code, name in languages.items() %}
+                    <option value="{{ code }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Translate</button>
+        </div>
+
+        <div class="box">
+            <textarea readonly placeholder="Translated text" class="translate-text">
+            {% if translate %}
+                {{translate.text}}
+            {%endif%}
+            </textarea>
+            {% if translate %}
+                {% if translate.audio%}
+                    <audio id="translation-audio">
+                        <source src="{{ url_for('static', filename='output.mp3', v=range(1, 9999) | random) }}" type="audio/mpeg">
+                    </audio>
+                {%endif%}
+            {%endif%}
+
+            <select name="target_lang">
+                {% for code, name in languages.items() %}
+                    <option value="{{ code }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            <button type="button" onclick="playAudio()" class="listen-btn">🔊 Listen</button>
+        </div>
+        
+    </form>
+    {% if translate %}
+    <p>Accuracy: {{translate.match * 100}}%</p>
+    {%endif%}
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("translation-audio");
+            audio.play();
+        }
+    </script>
+
+
+</body>
+</html>
