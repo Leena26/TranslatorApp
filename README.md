@@ -59,6 +59,4 @@ Access the app at http://127.0.0.1:5000.
 └── static/
     ├── style.css       # Custom styling
     └── output.mp3      # Generated speech file (temp)
-
-
-
+```
