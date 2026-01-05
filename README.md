@@ -13,7 +13,8 @@ A web-based translation application built with **Flask** that translates text be
 ## 🛠️ Tech Stack
 - **Backend:** Python (Flask)
 - **Frontend:** HTML5, CSS3 (Flexbox), JavaScript
-- **APIs:** - [MyMemory](https://mymemory.translated.net/) (Translation)
+- **APIs:** 
+  - [MyMemory](https://mymemory.translated.net/) (Translation)
   - [ElevenLabs](https://elevenlabs.io/) (Text-to-Speech)
 
 ## 📋 Prerequisites
