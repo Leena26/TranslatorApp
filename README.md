@@ -50,6 +50,7 @@ Access the app at http://127.0.0.1:5000.
  - Once the translation appears, click the 🔊 Listen button to hear it.
 
 ## Project Structure
+```text
 ├── translate.py        # Main Flask application logic
 ├── languages.json      # List of supported language codes and names
 ├── .env                # Private API keys (do not commit to GitHub)
